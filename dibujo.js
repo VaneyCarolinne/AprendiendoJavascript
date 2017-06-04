@@ -1,4 +1,9 @@
 var d = document.getElementById("dibujito");
+var v = document.getElementById("lectura");
+var s = document.getElementById("boton");
+s.addEventListener("click",dibujarPorClick);
+
+
 var lienzo = d.getContext("2d");
 var lineas = 30;
 var l = 0;
@@ -27,4 +32,18 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
 	lienzo.lineTo(xfinal,yfinal);
 	lienzo.stroke();
 	lienzo.closePath();
+}
+function dibujarPorClick()
+{
+	var x = v.value;
+	var numero = parseInt(x);
+	for(var i = 0; i < numero; i++)
+	{
+		dibujarLinea("yellow", 50, 10, 10, 99);
+		dibujarLinea("green", 40, 10, 10, 99);
+		dibujarLinea("black", 30, 10, 10, 99);
+		dibujarLinea("purple", 20, 10, 10, 99);
+		dibujarLinea("blue", 10, 10, 10, 99);		
+	}
+	//alert("No me toques ahi");
 }
